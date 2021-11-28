@@ -29,7 +29,7 @@ Shader "Unlit/Hologram"
             #pragma multi_compile_fog
 
             #include "UnityCG.cginc"
-            #include "../libs/Utility.cginc"
+            #include "../PostEffect/libs/Utility.cginc"
 
             struct appdata
             {
