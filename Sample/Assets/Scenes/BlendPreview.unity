@@ -136,12 +136,12 @@ GameObject:
   - component: {fileID: 122144644}
   - component: {fileID: 122144643}
   m_Layer: 0
-  m_Name: BlendCheck (1)
+  m_Name: Hologram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &122144642
 Transform:
   m_ObjectHideFlags: 0
@@ -836,7 +836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1573397679
 Transform:
   m_ObjectHideFlags: 0
@@ -932,7 +932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1584552804
 Transform:
   m_ObjectHideFlags: 0
