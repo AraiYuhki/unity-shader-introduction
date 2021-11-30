@@ -17,7 +17,6 @@ Shader "Mask/Rect"
             #pragma fragment frag
 
             #include "UnityCG.cginc"
-            #include "../libs/SimpleMask.cginc"
             float4 _Param;
             sampler2D _MainTex;
             float4 _MainTex_TexelSize;

@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RectMask
-  m_Shader: {fileID: 4800000, guid: 3bfeb8cc914a9c74482170ed1e587af3, type: 3}
+  m_Name: StarMask
+  m_Shader: {fileID: 4800000, guid: 3836d504b7417fa498fae0405842dd89, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -56,8 +56,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Angle: 180
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _Dent: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -71,10 +73,10 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _VertexCount: 5
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Param: {r: -0.2, g: -0.2, b: 0.2, a: 0.2}
-    - _Rect: {r: 0.25, g: 0.25, b: 0.75, a: 0.75}
+    - _Status: {r: 0, g: 0, b: 0.5, a: 0.1}
   m_BuildTextureStacks: []

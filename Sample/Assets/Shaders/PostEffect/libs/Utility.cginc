@@ -1,3 +1,7 @@
+static const float DEG2RAD = 0.0174532924;
+static const float PI = 3.14159274;
+static const float TWO_PI = 6.28318530718;
+
 float random(float2 p) {
 	return frac(sin(dot(p, fixed2(12.9898, 78.233))) * 43758.5453);
 }

@@ -10153,7 +10153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f60d1a39ddd324ba8dbf8702941797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 52f931bd9d4da1c4495ff20ac5f826ff, type: 2}
+  material: {fileID: 2100000, guid: 7dfb3294b0142a54983f04493565b578, type: 2}
 --- !u!4 &965825452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429508, guid: 9c74caa742791864f9c678287121e6c9, type: 3}
