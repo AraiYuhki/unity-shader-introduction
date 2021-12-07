@@ -19,7 +19,7 @@ public class PostEffect : MonoBehaviour
 			Graphics.Blit(source, destination);
 			return;
 		}
-		source.wrapMode = TextureWrapMode.Mirror;
+
 		Graphics.Blit(source, destination, material);
 	}
 }

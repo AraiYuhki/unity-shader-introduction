@@ -27,7 +27,7 @@ Shader "Distortion/Sin"
             fixed4 frag (v2f_img i) : SV_Target
             {
                 float2 uv = i.uv;
-                float distortion = frac(sin(_Time.y + uv.y * _Frequence) * _Power);
+                float distortion = sin(_Time.y + uv.y * _Frequence) * _Power;
                 uv.x += distortion;
                 fixed4 col = tex2D(_MainTex, uv);
                 return col;

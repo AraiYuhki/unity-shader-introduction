@@ -12,12 +12,7 @@ Shader "Custom/Bamp"
     }
     SubShader
     {
-        Tags { 
-            "RenderType"="Opaque"
-            "LightMode"="ForwardBase"
-        }
-        LOD 100
-
+        Tags { "RenderType"="Opaque" "LightMode"="ForwardBase" }
         Pass
         {
             CGPROGRAM
@@ -67,7 +62,6 @@ Shader "Custom/Bamp"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
                 float3 normal = normalize(i.worldNormal);
                 float3 normal2 = UnpackNormal(tex2D(_NormalTex, i.uv));
