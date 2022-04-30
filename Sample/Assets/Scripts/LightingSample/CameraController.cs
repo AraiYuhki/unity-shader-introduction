@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
 
 	private float angle = 0f;
 	bool rotateHorizontal = true;
-	const float MoveAngle = 0.2f;
+	const float MoveAngle = 0.6f;
 
 	// Start is called before the first frame update
 	void Start()

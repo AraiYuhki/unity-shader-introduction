@@ -16,6 +16,9 @@ public class GlowFilter : PostEffect
 	[SerializeField]
 	private float power = 1.0f;
 
+	[SerializeField]
+	private bool enableBloom = false;
+
 	private int thresholdId = -1;
 	private int blurTexId = -1;
 	private int blurSizeId = -1;
@@ -31,11 +34,18 @@ public class GlowFilter : PostEffect
 
 	private void Update()
 	{
-		label.text = string.Format("Threshold = {0:0.00}\nBlurSize = {1:0.00}\nPower = {2:0.00}", threshold, blurSize, power);
+		//label.text = string.Format("Threshold = {0:0.00}\nBlurSize = {1:0.00}\nPower = {2:0.00}", threshold, blurSize, power);
+		if (label != null)
+			label.text = enableBloom ? "Bloom On" : "Bloom Off";
 	}
 
 	protected override void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
+		if (!enableBloom)
+		{
+			Graphics.Blit(source, destination);
+			return;
+		}
 		blurMaterial.SetFloat(blurSizeId, blurSize);
 		colorPickMaterial.SetFloat(thresholdId, threshold);
 		var tmp = RenderTexture.GetTemporary(Screen.width, Screen.height, 0, source.format);
