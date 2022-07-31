@@ -1,4 +1,5 @@
-Shader "Custom/PhongPlus"
+// 鏡面反射シェーダー
+Shader "Sample/Custom/PhongPlus"
 {
     Properties
     {
@@ -22,8 +23,6 @@ Shader "Custom/PhongPlus"
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
-            // make fog work
-            #pragma multi_compile_fog
             #pragma target 3.0
 
             #include "UnityCG.cginc"
@@ -39,7 +38,6 @@ Shader "Custom/PhongPlus"
             struct v2f
             {
                 float2 uv : TEXCOORD0;
-                UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
                 float3 worldNormal : TEXCOORD1;
                 float3 lightVector : TEXCOORD2;
@@ -54,14 +52,18 @@ Shader "Custom/PhongPlus"
             float _ReflectRatio;
             float4 _MainTex_ST;
 
-            v2f vert (appdata v)
+            v2f vert(appdata v)
             {
                 v2f o;
+                // 座標をワールド座標系に変換する
                 o.vertex = UnityObjectToClipPos(v.vertex);
+                // offsetとtilingを反映したUV値を取得する
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                UNITY_TRANSFER_FOG(o,o.vertex);
+                // 法線をワールド空間上の物に変換
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
+                // カメラへのオブジェクト空間ベクトル(光のベクトル)を取得
                 o.lightVector = ObjSpaceLightDir(v.vertex);
+                // 反射ベクトルを取得
                 float3 revViewVector = ObjSpaceViewDir(v.vertex);
                 o.reflectVector = reflect(-revViewVector, v.normal);
                 return o;
@@ -69,25 +71,31 @@ Shader "Custom/PhongPlus"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
+                // 全てのベクトルを正規化する
                 float3 normal = normalize(i.worldNormal);
                 float3 lightVector = normalize(i.lightVector);
                 float3 reflectVector = normalize(i.reflectVector);
+                // 陰のかかり方を算出
                 float shade = saturate(dot(normal, _WorldSpaceLightPos0.xyz));
                 shade = shade * 0.5 + 0.5;
                 shade = shade * shade;
 
+                // スペキュラの算出
                 float reflection = saturate(dot(lightVector, reflectVector));
+                // 鏡面反射の強さを算出
                 float shininess = pow(500, _Shininess);
+                // 写り込む色をキューブテクスチャから取得
                 fixed3 mirrorColor = texCUBE(_AmbientTex, reflectVector);
+                // スペキュラ(反射光)の色を算出
                 fixed3 reflectionColor = _Specular.rgb * pow(reflection, shininess) * _Reflectivity;
 
-                col.rgb =_LightColor0 * col.rgb * shade;
+                // ライティング
+                col.rgb = _LightColor0 * col.rgb * shade;
+                // 映り込みを反映
                 col.rgb += mirrorColor * _ReflectRatio;
+                // スペキュラの色を反映
                 col.rgb += reflectionColor;
-                // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
             }
             ENDCG

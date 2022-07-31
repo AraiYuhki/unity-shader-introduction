@@ -1,4 +1,4 @@
-Shader "Mask/Rect"
+Shader "Sample/Mask/Rect"
 {
     Properties
     {

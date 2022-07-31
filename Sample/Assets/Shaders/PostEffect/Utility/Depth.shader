@@ -1,4 +1,4 @@
-Shader "Utility/Depth"
+Shader "Sample/Utility/Depth"
 {
     SubShader
     {

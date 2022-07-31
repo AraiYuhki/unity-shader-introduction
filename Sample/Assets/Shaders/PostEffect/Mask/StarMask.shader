@@ -1,4 +1,4 @@
-Shader "Mask/Star"
+Shader "Sample/Mask/Star"
 {
     Properties
     {

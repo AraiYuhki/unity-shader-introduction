@@ -1,4 +1,4 @@
-Shader "PostEffect/TheWorld"
+Shader "Sample/PostEffect/TheWorld"
 {
     Properties
     {

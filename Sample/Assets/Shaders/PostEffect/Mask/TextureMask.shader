@@ -1,4 +1,4 @@
-Shader "Mask/Texture"
+Shader "Sample/Mask/Texture"
 {
     Properties
     {

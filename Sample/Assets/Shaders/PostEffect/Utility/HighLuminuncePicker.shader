@@ -1,4 +1,4 @@
-Shader "PostEffect/HighLuminuncePicker"
+Shader "Sample/PostEffect/HighLuminuncePicker"
 {
     Properties
     {

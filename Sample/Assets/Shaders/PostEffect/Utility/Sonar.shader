@@ -1,4 +1,4 @@
-Shader "PostEffect/Sonar"
+Shader "Sample/PostEffect/Sonar"
 {
     Properties
     {

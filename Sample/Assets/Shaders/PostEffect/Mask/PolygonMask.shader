@@ -1,4 +1,4 @@
-Shader "Mask/Polygon"
+Shader "Sample/Mask/Polygon"
 {
     Properties
     {
@@ -33,11 +33,13 @@ Shader "Mask/Polygon"
                 float2 position = i.uv * 2.0 - 1.0;
                 position += _Status.xy;
                 position *= float2(_MainTex_TexelSize.z * _MainTex_TexelSize.y, 1.0);
+                // ディスタンスフィールド作成
                 float a = atan2(position.x, position.y) + _Angle * DEG2RAD;
                 float r = TWO_PI / _VertexCount;
                 float d = cos(floor(0.5 + a / r) * r - a) * length(position);
                 float value = 1.0 - smoothstep(_Status.z, _Status.z + _Status.w, d);
                 fixed4 col = tex2D(_MainTex, i.uv);
+                // ディスタンスフィールドを元に切り抜きを行う
                 col.rgb = lerp(fixed3(0, 0, 0), col.rgb, value);
                 return col;
             }

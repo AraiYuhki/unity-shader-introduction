@@ -1,4 +1,4 @@
-Shader "PostEffect/ColorMixer"
+Shader "Sample/PostEffect/ColorMixer"
 {
     Properties
     {

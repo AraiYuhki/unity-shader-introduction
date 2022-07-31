@@ -1,4 +1,4 @@
-Shader "Noise/Perlin"
+Shader "Sample/Noise/Perlin"
 {
     Properties
     {

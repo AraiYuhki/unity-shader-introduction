@@ -1,4 +1,4 @@
-Shader "Filter/Negative"
+Shader "Sample/Filter/Negative"
 {
     Properties
     {

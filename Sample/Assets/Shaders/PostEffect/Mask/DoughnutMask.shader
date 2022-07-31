@@ -1,4 +1,4 @@
-Shader "Mask/DoughnutMask"
+Shader "Sample/Mask/DoughnutMask"
 {
     Properties
     {

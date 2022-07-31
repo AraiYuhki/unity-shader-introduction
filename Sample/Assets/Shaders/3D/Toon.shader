@@ -1,10 +1,10 @@
-Shader "Custom/Toon"
+Shader "Sample/Custom/Toon"
 {
     Properties
     {
         _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _ToonShadow("ToonShadow", 2D) = "whit" {}
+        _ToonShadow("ToonShadow", 2D) = "whit" {} // 陰テクスチャ
     }
     SubShader
     {
@@ -63,6 +63,7 @@ Shader "Custom/Toon"
                 float nl = clamp(dot(normal, lightDir), 0, 1);
                 nl = nl * 0.5 + 0.5;
                 nl = nl * nl;
+                // テクスチャから陰色を取得する
                 fixed3 shadowColor = tex2D(_ToonShadow, float2(nl, 0));
                 col.rgb = _LightColor0 * col.rgb * shadowColor;
                 return col;

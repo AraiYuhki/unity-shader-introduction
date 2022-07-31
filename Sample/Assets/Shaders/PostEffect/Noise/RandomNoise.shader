@@ -1,4 +1,4 @@
-Shader "Noise/Random"
+Shader "Sample/Noise/Random"
 {
     Properties
     {

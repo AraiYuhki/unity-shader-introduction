@@ -1,25 +1,28 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Camera)), ExecuteInEditMode]
-public class PostEffect : MonoBehaviour
+namespace Sample
 {
-	[SerializeField]
-	protected Material material;
-
-	public Material Material
+	[RequireComponent(typeof(Camera)), ExecuteInEditMode]
+	public class PostEffect : MonoBehaviour
 	{
-		get => material;
-		set => material = value;
-	}
+		[SerializeField]
+		protected Material material;
 
-	protected virtual void OnRenderImage(RenderTexture source, RenderTexture destination)
-	{
-		if (material == null)
+		public Material Material
 		{
-			Graphics.Blit(source, destination);
-			return;
+			get => material;
+			set => material = value;
 		}
 
-		Graphics.Blit(source, destination, material);
+		protected virtual void OnRenderImage(RenderTexture source, RenderTexture destination)
+		{
+			if (material == null)
+			{
+				Graphics.Blit(source, destination);
+				return;
+			}
+
+			Graphics.Blit(source, destination, material);
+		}
 	}
 }

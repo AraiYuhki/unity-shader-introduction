@@ -1,4 +1,4 @@
-Shader "PostEffect/Scaning"
+Shader "Sample/PostEffect/Scaning"
 {
     Properties
     {

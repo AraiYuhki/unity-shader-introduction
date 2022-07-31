@@ -1,4 +1,4 @@
-Shader "Unlit/Normal"
+Shader "Sample/Unlit/Normal"
 {
     Properties
     {

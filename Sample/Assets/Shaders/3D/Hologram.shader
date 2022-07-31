@@ -1,4 +1,4 @@
-Shader "Unlit/Hologram"
+Shader "Sample/Unlit/Hologram"
 {
     Properties
     {

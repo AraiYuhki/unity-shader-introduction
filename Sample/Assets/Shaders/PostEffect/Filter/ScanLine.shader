@@ -1,4 +1,4 @@
-Shader "PostEffect/ScanLine"
+Shader "Sample/PostEffect/ScanLine"
 {
     Properties
     {

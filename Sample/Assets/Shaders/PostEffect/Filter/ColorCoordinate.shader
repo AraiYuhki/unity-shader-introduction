@@ -1,4 +1,4 @@
-Shader "PostEffect/ColorCoordinate"
+Shader "Sample/PostEffect/ColorCoordinate"
 {
     Properties
     {

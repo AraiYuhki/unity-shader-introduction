@@ -1,4 +1,4 @@
-Shader "PostEffect/EdgeFilter"
+Shader "Sample/PostEffect/EdgeFilter"
 {
     Properties
     {

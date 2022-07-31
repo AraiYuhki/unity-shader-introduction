@@ -1,4 +1,4 @@
-Shader "Custom/ToonWithoutTexture"
+Shader "Sample/Custom/ToonWithoutTexture"
 {
     Properties
     {
@@ -22,7 +22,6 @@ Shader "Custom/ToonWithoutTexture"
             #include "UnityCG.cginc"
             #include "Lighting.cginc"
 
-            // Use shader model 3.0 target, to get nicer looking lighting
             #pragma target 3.0
 
             struct appdata
@@ -63,6 +62,7 @@ Shader "Custom/ToonWithoutTexture"
                 float nl = clamp(dot(normal, lightDir), 0, 1);
                 nl = nl * 0.5 + 0.5;
                 nl = nl * nl;
+                // 減色(ポスタリゼーション)を適用する
                 nl = floor(nl * _DivideNum) / _DivideNum;
                 nl = saturate(nl);
                 col.rgb = _LightColor0 * col.rgb * fixed3(nl, nl, nl);

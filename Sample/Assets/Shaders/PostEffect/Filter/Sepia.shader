@@ -1,4 +1,4 @@
-Shader "Filter/Sepia"
+Shader "Sample/Filter/Sepia"
 {
     Properties
     {

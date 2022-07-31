@@ -1,4 +1,4 @@
-Shader "Noise/Block"
+Shader "Sample/Noise/Block"
 {
     Properties
     {

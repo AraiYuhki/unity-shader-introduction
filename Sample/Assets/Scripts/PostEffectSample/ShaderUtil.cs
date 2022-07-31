@@ -1,21 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ShaderProperty
+namespace Sample
 {
-	Param = 0,
-	VertexNum,
-	Angle
-}
+	public enum ShaderProperty
+	{
+		Param = 0,
+		VertexNum,
+		Angle
+	}
 
-public class ShaderUtil
-{
-	private static Dictionary<ShaderProperty, int> propertyIds = new Dictionary<ShaderProperty, int>()
+	public class ShaderUtil
+	{
+		private static Dictionary<ShaderProperty, int> propertyIds = new Dictionary<ShaderProperty, int>()
 	{
 		{ ShaderProperty.Param, Shader.PropertyToID("_Param") },
 		{ ShaderProperty.VertexNum, Shader.PropertyToID("_VertexNum") },
 		{ ShaderProperty.Angle, Shader.PropertyToID("_Angle") }
 	};
 
-	public static int GetPropertyId(ShaderProperty key) => propertyIds.TryGetValue(key, out var id) ? id : -1;
+		public static int GetPropertyId(ShaderProperty key) => propertyIds.TryGetValue(key, out var id) ? id : -1;
+	}
 }

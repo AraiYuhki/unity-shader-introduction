@@ -1,4 +1,4 @@
-Shader "Noise/fBm"
+Shader "Sample/Noise/fBm"
 {
     Properties
     {

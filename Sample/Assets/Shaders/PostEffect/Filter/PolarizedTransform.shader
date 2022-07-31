@@ -1,4 +1,5 @@
-Shader "PostEffect/PolarizedTransform"
+// 極座標変換シェーダー
+Shader "Sample/PostEffect/PolarizedTransform"
 {
     Properties
     {

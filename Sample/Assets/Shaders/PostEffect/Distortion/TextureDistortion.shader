@@ -1,4 +1,4 @@
-Shader "Distortion/Texture"
+Shader "Sample/Distortion/Texture"
 {
     Properties
     {

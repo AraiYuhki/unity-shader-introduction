@@ -1,4 +1,4 @@
-Shader "PostEffect/GlitchNoise"
+Shader "Sample/PostEffect/GlitchNoise"
 {
     Properties
     {

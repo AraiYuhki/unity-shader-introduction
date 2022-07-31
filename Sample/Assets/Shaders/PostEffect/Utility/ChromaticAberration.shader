@@ -1,4 +1,4 @@
-Shader "PostEffect/ChromaticAberration"
+Shader "Sample/PostEffect/ChromaticAberration"
 {
     Properties
     {

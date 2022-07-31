@@ -1,4 +1,5 @@
-Shader "PostEffect/Bipolarization"
+// 二極化シェーダー
+Shader "Sample/PostEffect/Bipolarization"
 {
     Properties
     {

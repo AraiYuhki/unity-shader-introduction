@@ -1,4 +1,4 @@
-Shader "PostEffect/DepthOfField"
+Shader "Sample/PostEffect/DepthOfField"
 {
     Properties
     {

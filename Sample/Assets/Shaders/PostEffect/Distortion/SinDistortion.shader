@@ -1,4 +1,4 @@
-Shader "Distortion/Sin"
+Shader "Sample/Distortion/Sin"
 {
     Properties
     {

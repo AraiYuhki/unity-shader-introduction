@@ -1,4 +1,5 @@
-Shader "PostEffect/Posterization"
+// 減色効果シェーダー
+Shader "Sample/PostEffect/Posterization"
 {
     Properties
     {

@@ -1,4 +1,4 @@
-Shader "PostEffect/ExplodeBlur"
+Shader "Sample/PostEffect/ExplodeBlur"
 {
     Properties
     {

@@ -1,4 +1,4 @@
-Shader "PostEffect/SpikeNoise"
+Shader "Sample/PostEffect/SpikeNoise"
 {
     Properties
     {

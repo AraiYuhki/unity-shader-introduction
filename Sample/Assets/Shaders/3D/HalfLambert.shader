@@ -1,4 +1,4 @@
-Shader "Custom/HalfLambert"
+Shader "Sample/Custom/HalfLambert"
 {
     Properties
     {
@@ -42,8 +42,11 @@ Shader "Custom/HalfLambert"
             v2f vert (appdata v)
             {
                 v2f o;
+                // 座標をワールド座標系に変換する
                 o.vertex = UnityObjectToClipPos(v.vertex);
+                // offsetとtilingを反映したUV値を取得する
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                // 法線をワールド空間上の物に変換
                 o.worldNormal = UnityObjectToWorldNormal(v.normal);
                 return o;
             }
@@ -52,10 +55,12 @@ Shader "Custom/HalfLambert"
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
                 float3 normal = normalize(i.worldNormal);
+                // 陰のかかり方を算出
                 float shade = saturate(dot(normal, _WorldSpaceLightPos0.xyz));
                 shade = shade * 0.5 + 0.5;
                 shade = shade * shade;
 
+                // ライティング
                 col.rgb =_LightColor0 * col.rgb * shade;
                 return col;
             }

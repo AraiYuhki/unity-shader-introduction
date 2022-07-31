@@ -1,4 +1,4 @@
-Shader "Filter/GrayScale"
+Shader "Sample/Filter/GrayScale"
 {
     Properties
     {

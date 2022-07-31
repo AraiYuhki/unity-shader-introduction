@@ -1,4 +1,4 @@
-Shader "Mask/Circle"
+Shader "Sample/Mask/Circle"
 {
     Properties
     {

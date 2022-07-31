@@ -1,4 +1,4 @@
-Shader "Unlit/BlendModeCheck"
+Shader "Sample/Unlit/BlendModeCheck"
 {
     Properties
     {

@@ -1,4 +1,5 @@
-Shader "PostEffect/LuminanceToColor"
+// 輝度取得シェーダー
+Shader "Sample/PostEffect/LuminanceToColor"
 {
     Properties
     {
